@@ -13,9 +13,11 @@ git clone https://github.com/himalczyk/Florida_Men_Story_Generator.git
 
     Path like: ...\Florida_Men_Story_Generator
 
+
 3. Right click on directory level and open the terminal (cmd.exe) inside of the directory.
 
     Another possibility is to just type **cmd** and click **enter** in the explorer path level.
+
 
 4. Use the following command to run the program:
 

@@ -22,7 +22,8 @@ class FloridaMan():
         date = answers[0]
         verb = answers[1]
         noun = answers[2]
-        print(self.generate_florida_men_story(date, verb, noun))
+        a_or_an = self.recognize_consonant_or_vowel_sound(noun)
+        print(self.generate_florida_men_story(date, verb, noun, a_or_an))
         self.one_more()
 
     def welcome_the_user(self):
@@ -41,16 +42,26 @@ class FloridaMan():
         
         return date, verb, noun
 
-    def generate_florida_men_story(self, date, verb, noun):
+    def generate_florida_men_story(self, date, verb, noun, a_or_an):
         """Taking the list of answers and generating a florida man story sentence in return"""
         
         list_of_human_repr = ['woman', 'man', 'human', 'guy', 'kid', 'parent', 'child', 'girl', 'boy']
         
         human_repr = random.choice(list_of_human_repr)
         
-        florida_men_string = f'On {date} florida man {verb} a {human_repr} with {noun}\n'
+        florida_men_string = f'On {date} florida man {verb} a {human_repr} with {a_or_an} {noun}\n'
         
         return florida_men_string
+    
+    def recognize_consonant_or_vowel_sound(self, noun):
+        """Simply check if first letter of noun is consontant sound or vowel sound"""
+        
+        vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+        a_or_an = 'a'
+        if noun[0] in vowels:
+            a_or_an = 'an'
+            
+        return a_or_an
 
     def one_more(self):
         """Simple question to user if he wants to do one more story"""
